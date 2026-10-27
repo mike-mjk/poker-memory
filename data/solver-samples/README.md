@@ -24,7 +24,7 @@ computed; grouping and cross-flop weighting remain undecided.
 | As Kh 6h | Mobius GTO | Saved | Saved | Separate reference; excluded from standard collection |
 | As Kh 6h | Standard Xeno | Pending | Pending | User will collect again |
 | As Kh 5h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
-| As Kh 4h | Standard Xeno | Pending | Pending | Awaiting exports |
+| As Kh 4h | Standard Xeno | Saved | Pending | Frequencies saved; awaiting weights |
 | As Kh 3h | Standard Xeno | Pending | Pending | Awaiting exports |
 | As Kh 2h | Standard Xeno | Pending | Pending | Awaiting exports |
 
