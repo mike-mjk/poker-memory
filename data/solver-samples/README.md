@@ -29,6 +29,12 @@ no EV-loss calculation has been performed.
 | As Kh 4h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 3h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 2h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
+| As Kh 9h | Standard Xeno | Saved | Pending | Additional board; awaiting weights before trainer expansion |
+
+Additional boards are recorded under `additional_samples` in the manifest. AK9's
+exact suits and other setup are inherited from the standard-Xeno series. Its raw
+betting export is preserved in `zeno-standard-btn-vs-straddle-200bb-AsKh9h-bet75`;
+it is not included in the current four-board trainer targets.
 
 AK5 is stored at `zeno-standard-btn-vs-straddle-200bb-AsKh5h-bet75`. Its source was
 initially mislabeled by provisional inheritance from AK6; the user explicitly

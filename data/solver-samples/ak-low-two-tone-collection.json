@@ -100,5 +100,17 @@
     "ev_loss_computed": false
   },
   "cross_flop_averages_computed": true,
-  "average_target_implementation": "src/average-trainer.js; calculated at runtime from saved standard-Xeno samples"
+  "average_target_implementation": "src/average-trainer.js; calculated at runtime from saved standard-Xeno samples",
+  "additional_samples": [
+    {
+      "board": [
+        "As",
+        "Kh",
+        "9h"
+      ],
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh9h-bet75",
+      "status": "frequencies_saved_weights_pending",
+      "included_in_current_trainer": false
+    }
+  ]
 }
