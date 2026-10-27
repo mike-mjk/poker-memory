@@ -26,7 +26,7 @@ computed; grouping and cross-flop weighting remain undecided.
 | As Kh 5h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 4h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 3h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
-| As Kh 2h | Standard Xeno | Pending | Pending | Awaiting exports |
+| As Kh 2h | Standard Xeno | Saved | Pending | Frequencies saved; awaiting weights |
 
 AK5 is stored at `zeno-standard-btn-vs-straddle-200bb-AsKh5h-bet75`. Its source was
 initially mislabeled by provisional inheritance from AK6; the user explicitly

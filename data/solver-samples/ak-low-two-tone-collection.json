@@ -56,8 +56,8 @@
         "Kh",
         "2h"
       ],
-      "sample_id": null,
-      "status": "awaiting_standard_range_exports"
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh2h-bet75",
+      "status": "frequencies_saved_weights_pending"
     }
   ],
   "excluded_reference_samples": [
