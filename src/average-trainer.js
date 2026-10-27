@@ -130,3 +130,11 @@ export function scoreAverageBatch(batch, answers) {
   const results = questions.map(q => ({ key: q.key, target: q.target, answer: answers[q.key], error: Math.abs(answers[q.key] - q.target) }));
   return { results, exact: results.filter(r => r.error === 0).length, count: results.length, meanError: results.reduce((sum,r) => sum+r.error, 0)/results.length };
 }
+
+// Study view: rank only the stable-profile questions used by the trainer.
+// Requiring every board gives the strictest apples-to-apples comparison.
+export function rankAverageVariation(catalog, { classId = '', style = '', minBoards = 2 } = {}) {
+  return [...catalog.values()].flatMap(hands => [...hands.values()]).flatMap(hand => hand.questions)
+    .filter(q => (!classId || q.classId === classId) && (!style || q.hand[2] === style) && q.points.filter(p => p.included).length >= minBoards)
+    .sort((a,b) => b.spread - a.spread || a.key.localeCompare(b.key));
+}

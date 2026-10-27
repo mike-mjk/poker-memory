@@ -150,7 +150,7 @@ for (const button of document.querySelectorAll('[data-mode]')) button.addEventLi
   }
   if (mode === 'averages') {
     document.querySelector('#status').textContent = 'Equal-board averages · Whole-percent targets';
-    document.querySelector('#mode-note').textContent = 'Standard Xeno · AK5–AK2 · Bet 75%';
+    document.querySelector('#mode-note').textContent = 'Standard Xeno · AK9–AK2 except AK6 · Bet 75%';
   }
   renderCells();
 });

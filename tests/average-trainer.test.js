@@ -2,19 +2,21 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { averageSamples } from '../src/average-data.js';
 import { deck, parseFlop, classifyHand } from '../src/flop.js';
-import { buildAverageCatalog, summarizeFrequencies, chooseAverageBatch, batchOptions, scoreAverageBatch, drawProfile, hasBackdoorStraight } from '../src/average-trainer.js';
+import { buildAverageCatalog, summarizeFrequencies, chooseAverageBatch, batchOptions, scoreAverageBatch, drawProfile, hasBackdoorStraight, rankAverageVariation } from '../src/average-trainer.js';
 
-const catalog=buildAverageCatalog(averageSamples);
+const legacySamples=averageSamples.filter(s=>['5h','4h','3h','2h'].includes(s.spot.board[2]));
+const catalog=buildAverageCatalog(legacySamples);
+const expandedCatalog=buildAverageCatalog(averageSamples);
 const question=(classId,hand,key)=>catalog.get(classId).get(hand).questions.find(q=>q.key===key);
 const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-9,`${a} != ${b}`);
 const boardNames=q=>q.points.filter(p=>p.included).map(p=>p.board[2]);
 
-test('dataset uses only complete standard-Xeno AK5–AK2 samples, never Mobius AK6',()=>{
-  assert.deepEqual(averageSamples.map(s=>s.spot.board[2]),['5h','4h','3h','2h']);
+test('dataset uses all seven complete standard-Xeno boards, never Mobius or pending AK6',()=>{
+  assert.deepEqual(averageSamples.map(s=>s.spot.board[2]),['9h','8h','7h','5h','4h','3h','2h']);
   assert.ok(averageSamples.every(s=>s.provenance.uses_solver_standard_preflop_ranges && s.data_semantics.range_weights_provided));
   assert.ok(averageSamples.every(s=>s.action.size_fraction_of_pot===.75));
 });
-test('A8s targets match the agreed means and omit the blocked spades combo',()=>{
+test('four-board regression: A8s targets match the agreed means and omit the blocked spades combo',()=>{
   const hand=catalog.get('top-pair').get('A8s');
   assert.deepEqual(hand.questions.map(q=>q.key),['Ac8c','Ad8d','Ah8h']);
   assert.deepEqual(hand.questions.map(q=>q.target),[60,61,87]);
@@ -49,7 +51,7 @@ test('backdoor straight changes are excluded rather than silently averaged',()=>
 });
 test('every catalog target uses at least two boards with identical made and draw profile',()=>{
   const byCode=new Map(deck.map(c=>[c.code,c]));
-  for(const hands of catalog.values())for(const hand of hands.values())for(const q of hand.questions){
+  for(const hands of expandedCatalog.values())for(const hand of hands.values())for(const q of hand.questions){
     const profiles=q.points.filter(p=>p.included).map(p=>drawProfile(q.cards.map(c=>byCode.get(c)),parseFlop(p.board.join(' '))));
     assert.ok(profiles.length>=2);
     assert.equal(new Set(profiles.map(p=>JSON.stringify(p))).size,1,q.key);
@@ -96,4 +98,33 @@ test('backdoor definition includes runner-runner Broadway but excludes existing 
   assert.equal(hasBackdoorStraight(get('Jc 8c'),board),true);
   assert.equal(hasBackdoorStraight(get('Qc Jc'),board),false);
   assert.ok(classifyHand(get('Qc Jc'),board).draws.includes('gutshot'));
+});
+
+test('expanded targets use the new boards but still exclude two pair and changed draw profiles',()=>{
+  const q=expandedCatalog.get('top-pair').get('A8s').questions.find(q=>q.key==='Ad8d');
+  assert.deepEqual(boardNames(q),['9h','7h','5h','4h','3h','2h']);
+  close(q.mean,66.55);assert.equal(q.target,67);
+  assert.match(q.points.find(p=>p.board[2]==='8h').reason,/Two pair/);
+  const k=expandedCatalog.get('middle-pair').get('KJs').questions.find(q=>q.key==='KsJs');
+  assert.equal(k.points.filter(p=>p.included).length,7);
+  close(k.mean,54.5);assert.equal(k.target,55);close(k.spread,41.7);
+});
+test('variation rankings only compare the required number of same-profile boards',()=>{
+  const ranked=rankAverageVariation(expandedCatalog,{minBoards:7});
+  assert.equal(ranked.length,141);
+  assert.ok(ranked.every(q=>q.points.length===7&&q.points.every(p=>p.included)));
+  assert.ok(ranked.every((q,i)=>i===0||ranked[i-1].spread>=q.spread));
+  assert.equal(ranked[0].key,'Qs6s');close(ranked[0].spread,66.1);
+  assert.deepEqual(ranked[0].points.map(p=>Math.round(p.frequency*1000)/10),[69.5,71.4,50.8,11.3,6,9.3,5.3]);
+  const unpaired=rankAverageVariation(expandedCatalog,{classId:'unpaired',style:'s',minBoards:7});
+  assert.ok(unpaired.length>0&&unpaired.every(q=>q.classId==='unpaired'&&q.hand.endsWith('s')));
+  assert.ok(rankAverageVariation(expandedCatalog,{minBoards:2}).length>ranked.length);
+});
+test('expanded data retain batch controls and independent whole-percent scoring',()=>{
+  const batch=chooseAverageBatch(expandedCatalog,{classId:'unpaired',style:'s',direction:'low',anchor:'6'},()=>.25);
+  assert.equal(batch.hands.length,3);
+  assert.ok(batch.hands.every(h=>h.low==='6'));
+  const answers=Object.fromEntries(batch.hands.flatMap(h=>h.questions).map(q=>[q.key,q.target]));
+  const result=scoreAverageBatch(batch,answers);
+  assert.equal(result.exact,result.count);assert.equal(result.meanError,0);
 });

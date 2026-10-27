@@ -13408,7 +13408,7 @@
     }
   ],
   "collection_id": "ak-low-two-tone-standard",
-  "collection_role": "Additional standard-Xeno board queued for possible trainer expansion; not part of the current AK5\u2013AK2 target set.",
+  "collection_role": "Active member of the seven-board standard-Xeno average trainer; standard AK6 remains pending.",
   "derived_statistics": {
     "calculation": "Sum over legal combinations: bet weight = reach_weight * frequency; check weight = reach_weight * (1 - frequency).",
     "precision": "Decimal arithmetic on the pasted decimal values; JSON summaries may be rounded at serialization.",

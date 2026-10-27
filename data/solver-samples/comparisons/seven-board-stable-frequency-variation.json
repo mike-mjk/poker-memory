@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "metric": "Maximum minus minimum betting frequency, in percentage points; not statistical variance or EV loss.",
+  "board_order": [
+    [
+      "As",
+      "Kh",
+      "9h"
+    ],
+    [
+      "As",
+      "Kh",
+      "8h"
+    ],
+    [
+      "As",
+      "Kh",
+      "7h"
+    ],
+    [
+      "As",
+      "Kh",
+      "5h"
+    ],
+    [
+      "As",
+      "Kh",
+      "4h"
+    ],
+    [
+      "As",
+      "Kh",
+      "3h"
+    ],
+    [
+      "As",
+      "Kh",
+      "2h"
+    ]
+  ],
+  "included_training_classes": [
+    "top-pair",
+    "middle-pair",
+    "unpaired"
+  ],
+  "matching_rules": "Positive node reach weight and identical made-hand/draw profile on every one of the seven boards.",
+  "qualifying_combo_count": 141,
+  "source_samples": [
+    {
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh9h-bet75",
+      "bet_export_sha256": "10c6f141269855794ba4d9404cbd6febb8c2ca77a1c53b9629b776ff79352242",
+      "weight_export_sha256": "9b68d36a67ad4fae67e4ddc3070f20c982e1d86604c0c8e8b9eab3acd4d69cae"
+    },
+    {
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh8h-bet75",
+      "bet_export_sha256": "fe66c97480b9dc4c9ef0065f595686dda4eb350b10ab74a2dce0f1956286aac9",
+      "weight_export_sha256": "09407ce9bdfbda2cad7e73ebcf3308f6a9d57ef3cf4260b48ab79856f53a6716"
+    },
+    {
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh7h-bet75",
+      "bet_export_sha256": "1aadb5cf82f9f1be76af5eba2b7d3aec5faad356c19e051554a3787163566462",
+      "weight_export_sha256": "332caa9a3ae7218727c38de97061d96c9603b90f9f5d5722b5c90956ea526d90"
+    },
+    {
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh5h-bet75",
+      "bet_export_sha256": "e1fe6e1767d26a747b820181f2c1617e53e53d2ea0bea2436de808b712e1d2b7",
+      "weight_export_sha256": "44279657f8cb973a9852ef47496a97fa3ff29acf36a2792fd67943f479b4de4a"
+    },
+    {
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh4h-bet75",
+      "bet_export_sha256": "12046f6ac693f622d0779c2c76b0d6f8852a193f1064282f2fd02a1c92e77e69",
+      "weight_export_sha256": "d3b6107ee10901efa65defbf47cf6d5228a4e13db5ebbedd391a2f52948f7c37"
+    },
+    {
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh3h-bet75",
+      "bet_export_sha256": "459e3541503062841504f183cc293d0db8dad8b45d13103a79e4434abef07011",
+      "weight_export_sha256": "e80f58b6d3fd3f97e37e5d736fc3e7d0e4b9c322069680a5108602b54308ea74"
+    },
+    {
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh2h-bet75",
+      "bet_export_sha256": "56d1698c8f4f333b919a405ea5732e69c1a18607953bab6b2be4f3241f0bd97b",
+      "weight_export_sha256": "793afc6671348369ef7ffdd80fa0f335efa52b40080a6c5c849acca5ac872b31"
+    }
+  ],
+  "csv_file": "seven-board-stable-frequency-variation.csv",
+  "top_examples": [
+    {
+      "combo": "Qs6s",
+      "class": "unpaired",
+      "draw_profile": "Backdoor flush draw · Backdoor straight",
+      "frequencies": [
+        0.695,
+        0.714,
+        0.508,
+        0.113,
+        0.06,
+        0.093,
+        0.053
+      ],
+      "mean_percent": 31.94285714285714,
+      "spread_pp": 66.1
+    },
+    {
+      "combo": "Kc6c",
+      "class": "middle-pair",
+      "draw_profile": "No draw, including no backdoors",
+      "frequencies": [
+        0.522,
+        0.291,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mean_percent": 11.614285714285714,
+      "spread_pp": 52.2
+    },
+    {
+      "combo": "Kd6d",
+      "class": "middle-pair",
+      "draw_profile": "No draw, including no backdoors",
+      "frequencies": [
+        0.519,
+        0.261,
+        0,
+        0,
+        0,
+        0.001,
+        0.001
+      ],
+      "mean_percent": 11.171428571428573,
+      "spread_pp": 51.9
+    },
+    {
+      "combo": "KsQs",
+      "class": "middle-pair",
+      "draw_profile": "Backdoor flush draw · Backdoor straight",
+      "frequencies": [
+        0.886,
+        0.823,
+        0.724,
+        0.668,
+        0.581,
+        0.542,
+        0.421
+      ],
+      "mean_percent": 66.35714285714286,
+      "spread_pp": 46.5
+    },
+    {
+      "combo": "KdTs",
+      "class": "middle-pair",
+      "draw_profile": "Backdoor straight",
+      "frequencies": [
+        0.754,
+        0.588,
+        0.523,
+        0.383,
+        0.331,
+        0.429,
+        0.364
+      ],
+      "mean_percent": 48.17142857142857,
+      "spread_pp": 42.3
+    },
+    {
+      "combo": "KsJs",
+      "class": "middle-pair",
+      "draw_profile": "Backdoor flush draw · Backdoor straight",
+      "frequencies": [
+        0.762,
+        0.66,
+        0.52,
+        0.579,
+        0.502,
+        0.447,
+        0.345
+      ],
+      "mean_percent": 54.49999999999999,
+      "spread_pp": 41.7
+    },
+    {
+      "combo": "KcTs",
+      "class": "middle-pair",
+      "draw_profile": "Backdoor straight",
+      "frequencies": [
+        0.748,
+        0.575,
+        0.449,
+        0.37,
+        0.342,
+        0.403,
+        0.384
+      ],
+      "mean_percent": 46.72857142857143,
+      "spread_pp": 40.6
+    },
+    {
+      "combo": "KdQh",
+      "class": "middle-pair",
+      "draw_profile": "Backdoor flush draw · Backdoor straight",
+      "frequencies": [
+        0.817,
+        0.724,
+        0.517,
+        0.551,
+        0.471,
+        0.521,
+        0.425
+      ],
+      "mean_percent": 57.514285714285705,
+      "spread_pp": 39.2
+    },
+    {
+      "combo": "KsTs",
+      "class": "middle-pair",
+      "draw_profile": "Backdoor flush draw · Backdoor straight",
+      "frequencies": [
+        0.557,
+        0.472,
+        0.246,
+        0.213,
+        0.191,
+        0.207,
+        0.167
+      ],
+      "mean_percent": 29.328571428571426,
+      "spread_pp": 39
+    },
+    {
+      "combo": "KsTd",
+      "class": "middle-pair",
+      "draw_profile": "Backdoor straight",
+      "frequencies": [
+        0.748,
+        0.636,
+        0.54,
+        0.443,
+        0.363,
+        0.425,
+        0.365
+      ],
+      "mean_percent": 50.28571428571428,
+      "spread_pp": 38.5
+    }
+  ]
+}

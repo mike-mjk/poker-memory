@@ -202,7 +202,8 @@ and the starter fact have automated tests.
 ## Average-frequency batch trainer
 
 Open **Averages** for the user-supplied standard-Xeno BTN-versus-straddle solves
-on As Kh 5h, As Kh 4h, As Kh 3h, and As Kh 2h. The separate Mobius AK6 solve is
+on As Kh 9h, As Kh 8h, As Kh 7h, As Kh 5h, As Kh 4h, As Kh 3h, and
+As Kh 2h. Standard-range AK6 is still missing; the separate Mobius AK6 solve is
 excluded. This feature does not use the app's original CO range.
 
 Each batch contains up to three related hands from one class (top pair, middle
@@ -221,12 +222,13 @@ silently count as 50% answers. Blocked and zero-weight combos are omitted.
 A target is the arithmetic mean of the original per-board betting frequencies,
 rounded once to the nearest whole percent. Each included board has equal weight.
 Node reach weights establish that a combo is present; they do not weight boards
-in these targets. For A-diamond/8-diamond the target is 61% (mean 60.85%).
+in these targets. For A-diamond/8-diamond the seven-board collection gives a 67% target
+(mean 66.55% across six qualifying boards; AK8 makes two pair and is excluded).
 
 The combo's made hand, flush draw, backdoor flush draw, direct straight-draw type,
 and backdoor straight status must match across the boards being averaged. When
 a profile changes, use the largest stable subset, at least two boards. Ties use
-the subset appearing first in AK5, AK4, AK3, AK2 order. Included boards and all
+the subset appearing first in AK9, AK8, AK7, AK5, AK4, AK3, AK2 order. Included boards and all
 exclusion reasons are visible per combo. For example, A5o top-pair targets omit
 AK5's two pair, and A3o top-pair targets omit AK3. Some hands lose or gain a
 backdoor straight on particular boards; those profiles are not silently merged.
@@ -251,3 +253,21 @@ The runtime targets live in `src/average-trainer.js`, their source selection in
 combo targets, suit eligibility, two-pair/draw exclusions, equal-board means,
 rounding, related-hand generation, and scoring. The standalone build bundles the
 solver samples; it requires no network requests to fetch training data.
+
+### Explore big swings
+
+Inside Averages, **Explore big swings** opens an explicitly revealed study table,
+sorted by frequency spread. By default it requires the exact made-hand and draw
+profile to remain the same on all seven boards. Filter by class, suit type, combo,
+or switch to at least two matching boards to inspect the trainer’s subset targets.
+Each row shows all seven board frequencies, the equal-board mean, rounded target,
+spread, and the profile being compared. Excluded boards are dashes rather than
+zeroes. Export filtered CSV downloads all matches, even when only the top 50 are
+visible. This view uses the same catalog as practice; it does not mix in a second
+classification or averaging rule.
+
+The seven-board dataset has separate browser statistics because its input checksum
+key differs from the original four-board dataset; the old stored totals are not
+overwritten. Variation-chart positions scale to the number of boards so all seven
+points and labels fit. The historical `ak-low-two-tone-collection.json` filename
+and collection ID are retained; its explicit active-board list is authoritative.

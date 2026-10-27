@@ -18,6 +18,33 @@
       "board": [
         "As",
         "Kh",
+        "9h"
+      ],
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh9h-bet75",
+      "status": "frequencies_and_weights_saved"
+    },
+    {
+      "board": [
+        "As",
+        "Kh",
+        "8h"
+      ],
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh8h-bet75",
+      "status": "frequencies_and_weights_saved"
+    },
+    {
+      "board": [
+        "As",
+        "Kh",
+        "7h"
+      ],
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh7h-bet75",
+      "status": "frequencies_and_weights_saved"
+    },
+    {
+      "board": [
+        "As",
+        "Kh",
         "6h"
       ],
       "sample_id": null,
@@ -72,6 +99,21 @@
       [
         "As",
         "Kh",
+        "9h"
+      ],
+      [
+        "As",
+        "Kh",
+        "8h"
+      ],
+      [
+        "As",
+        "Kh",
+        "7h"
+      ],
+      [
+        "As",
+        "Kh",
         "5h"
       ],
       [
@@ -92,7 +134,7 @@
     ],
     "board_weighting": "Equal weight among included boards; range weights establish presence, not board weight.",
     "eligibility": "Combo must be legal and have positive node reach weight. Made-hand class, flush draw, backdoor flush draw, direct straight-draw type, and backdoor straight status must remain identical.",
-    "subset_selection": "Largest stable-profile board subset, at least two boards. Ties favor the subset appearing first in AK5, AK4, AK3, AK2 order.",
+    "subset_selection": "Largest stable-profile board subset, at least two boards. Ties favor the subset appearing first in AK9, AK8, AK7, AK5, AK4, AK3, AK2 order.",
     "excluded_boards": "Omitted from both numerator and denominator, never treated as zero; exclusion reasons shown per combo.",
     "rounding": "Compute the mean from original frequencies, then round once to nearest whole percent (half up).",
     "suit_handling": "Each exact suited or offsuit combo has its own target; blocked and zero-weight combos are omitted.",
@@ -101,36 +143,5 @@
   },
   "cross_flop_averages_computed": true,
   "average_target_implementation": "src/average-trainer.js; calculated at runtime from saved standard-Xeno samples",
-  "additional_samples": [
-    {
-      "board": [
-        "As",
-        "Kh",
-        "9h"
-      ],
-      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh9h-bet75",
-      "status": "frequencies_and_weights_saved",
-      "included_in_current_trainer": false
-    },
-    {
-      "board": [
-        "As",
-        "Kh",
-        "8h"
-      ],
-      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh8h-bet75",
-      "status": "frequencies_and_weights_saved",
-      "included_in_current_trainer": false
-    },
-    {
-      "board": [
-        "As",
-        "Kh",
-        "7h"
-      ],
-      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh7h-bet75",
-      "status": "frequencies_and_weights_saved",
-      "included_in_current_trainer": false
-    }
-  ]
+  "display_name": "Standard Xeno AK9\u2013AK2 two-tone, excluding AK6"
 }

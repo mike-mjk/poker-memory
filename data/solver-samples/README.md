@@ -13,11 +13,11 @@ Each sample contains:
 
 ## Related-board collection status
 
-The active AK6–AK2 collection uses **standard Xeno ranges**, as confirmed by the
+The active AK9–AK2 collection (excluding missing standard AK6) uses **standard Xeno ranges**, as confirmed by the
 user. The solver was initially called “Zeno” in the conversation; directory names
 retain that prefix. `ak-low-two-tone-collection.json` identifies collection members
 and explicitly excludes the original Mobius AK6 reference. The **Averages** trainer
-now calculates per-combo targets from the four complete standard-range boards.
+now calculates per-combo targets from the seven complete standard-range boards.
 The manifest records its equal-board weighting and stable-profile subset rules;
 no EV-loss calculation has been performed.
 
@@ -25,18 +25,19 @@ no EV-loss calculation has been performed.
 | --- | --- | --- | --- | --- |
 | As Kh 6h | Mobius GTO | Saved | Saved | Separate reference; excluded from standard collection |
 | As Kh 6h | Standard Xeno | Pending | Pending | User will collect again |
-| As Kh 5h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
-| As Kh 4h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
-| As Kh 3h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
-| As Kh 2h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
-| As Kh 9h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
-| As Kh 8h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
-| As Kh 7h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
+| As Kh 5h | Standard Xeno | Saved | Saved | Active trainer board |
+| As Kh 4h | Standard Xeno | Saved | Saved | Active trainer board |
+| As Kh 3h | Standard Xeno | Saved | Saved | Active trainer board |
+| As Kh 2h | Standard Xeno | Saved | Saved | Active trainer board |
+| As Kh 9h | Standard Xeno | Saved | Saved | Active trainer board |
+| As Kh 8h | Standard Xeno | Saved | Saved | Active trainer board |
+| As Kh 7h | Standard Xeno | Saved | Saved | Active trainer board |
 
-Additional boards are recorded under `additional_samples` in the manifest. AK9's
-exact suits and other setup are inherited from the standard-Xeno series. Its raw
-betting export is preserved in `zeno-standard-btn-vs-straddle-200bb-AsKh9h-bet75`;
-it is not included in the current four-board trainer targets.
+AK9, AK8, and AK7 have been promoted into the manifest's active `samples` list.
+The current trainer averages AK9, AK8, AK7, AK5, AK4, AK3, and AK2 subject to
+per-combo eligibility. Exact suits and shared setup for these boards carry over
+from the standard-Xeno series. AK6 remains pending, and its Mobius reference is
+excluded. The historical manifest filename/collection ID are retained.
 
 AK9's range weights are now saved and matched to all 1,326 betting-export keys.
 The 150 board-blocked weights are zero; no legal zero-weight combo has a positive
@@ -44,8 +45,7 @@ betting frequency. Its 509 positive-weight legal combos (463 full-weight and 46
 fractional) total **482.66** weighted combos. The strategy produces
 **330.6921701** weighted betting combos and **151.9678299** weighted checking
 combos: **68.514517% bet / 31.485483% check**. Both raw inputs are preserved with
-checksums. This completed sample remains separate from the current AK5–AK2
-trainer target set until that board set is expanded explicitly.
+checksums. This completed sample is included in the active seven-board trainer target set.
 
 AK5 is stored at `zeno-standard-btn-vs-straddle-200bb-AsKh5h-bet75`. Its source was
 initially mislabeled by provisional inheritance from AK6; the user explicitly
@@ -96,16 +96,14 @@ weights are zero, and no zero-weight legal combo has a positive betting frequenc
 Its 508 positive-weight legal combos (469 full-weight and 39 fractional) total
 **487.30** weighted combos. The strategy gives **312.1698929** weighted betting
 combos and **175.1301071** weighted checking combos: **64.061131% bet / 35.938869%
-check**. Both raw exports and their checksums are preserved. Like AK9, AK8 is
-complete but remains outside the current AK5–AK2 trainer target set.
+check**. Both raw exports and their checksums are preserved. AK8 is included in the active seven-board trainer target set.
 
 AK7's weights match all 1,326 betting-export keys. All 150 blocked weights are
 zero, and no zero-weight legal combo has a positive bet frequency. Its 520
 positive-weight legal combos (477 full-weight and 43 fractional) total **494.11**
 weighted combos. The strategy gives **277.7774339** weighted betting combos and
 **216.3325661** weighted checking combos: **56.217732% bet / 43.782268% check**.
-Both raw exports and their checksums are preserved. AK7 is complete and queued
-alongside AK8 and AK9 for expansion of the current four-board trainer.
+Both raw exports and their checksums are preserved. AK7 is included alongside AK8 and AK9 in the active seven-board trainer.
 
 ## First sample
 
