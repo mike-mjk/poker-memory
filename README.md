@@ -198,3 +198,56 @@ the unreadable bytes under a recovery key before restoring normal saves.
 Model/backup logic lives in `src/flashcards.js`; UI code lives in
 `src/flashcard-ui.js`. Scheduling, round-trip backups, merge behavior, due queues,
 and the starter fact have automated tests.
+
+## Average-frequency batch trainer
+
+Open **Averages** for the user-supplied standard-Xeno BTN-versus-straddle solves
+on As Kh 5h, As Kh 4h, As Kh 3h, and As Kh 2h. The separate Mobius AK6 solve is
+excluded. This feature does not use the app's original CO range.
+
+Each batch contains up to three related hands from one class (top pair, middle
+pair, or no made hand). Keep suited and offsuit hands separate. Choose either
+same higher card/different lower cards, or same lower card/different higher cards;
+Mix both directions chooses between those layouts. Select a fixed rank or let
+it be random. Example presets include A8s/A9s/AJs, KQs/KJs/K8s,
+J8s/J7s/J6s, Q6s/J6s/T6s, and A5o/A3o/AJo.
+
+Every eligible exact suit combo gets its own whole-percent slider and number
+field. A group slider or number field sets all variants at once; individual
+controls then adjust them independently. Apply commits the group's displayed
+value without needing to move the slider. Initially unanswered controls do not
+silently count as 50% answers. Blocked and zero-weight combos are omitted.
+
+A target is the arithmetic mean of the original per-board betting frequencies,
+rounded once to the nearest whole percent. Each included board has equal weight.
+Node reach weights establish that a combo is present; they do not weight boards
+in these targets. For A-diamond/8-diamond the target is 61% (mean 60.85%).
+
+The combo's made hand, flush draw, backdoor flush draw, direct straight-draw type,
+and backdoor straight status must match across the boards being averaged. When
+a profile changes, use the largest stable subset, at least two boards. Ties use
+the subset appearing first in AK5, AK4, AK3, AK2 order. Included boards and all
+exclusion reasons are visible per combo. For example, A5o top-pair targets omit
+AK5's two pair, and A3o top-pair targets omit AK3. Some hands lose or gain a
+backdoor straight on particular boards; those profiles are not silently merged.
+Other profiles with only one board are not tested in this first version.
+
+Submit after answering every combo. Exact scoring uses the rounded target; the
+feedback also reports mean absolute error in percentage points. It reveals each
+combo's included board frequencies, unrounded mean (displayed to two decimals),
+rounded target, and max-minus-min spread. Charts show individual frequencies and
+a dashed mean line; expand them individually or together. Spreads of at least
+15 percentage points are highlighted as wide. This is a visual aid, not a claim
+about EV loss. Retry the batch or generate another.
+
+Practice totals are saved in this browser separately from the other trainers,
+keyed to the input export checksums. They count answer attempts, including retries,
+not unique mastered combos. Changing the source exports starts separate statistics.
+Current unanswered batch inputs remain in memory when switching tabs, but are not
+restored after a page reload.
+
+The runtime targets live in `src/average-trainer.js`, their source selection in
+`src/average-data.js`, and the interface in `src/average-ui.js`. Tests verify known
+combo targets, suit eligibility, two-pair/draw exclusions, equal-board means,
+rounding, related-hand generation, and scoring. The standalone build bundles the
+solver samples; it requires no network requests to fetch training data.

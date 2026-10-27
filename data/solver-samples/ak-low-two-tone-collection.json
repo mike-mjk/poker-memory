@@ -66,6 +66,39 @@
       "reason": "Uses Mobius GTO ranges; retain as a separate reference and exclude from standard-range averages."
     }
   ],
-  "averaging_rules": null,
-  "cross_flop_averages_computed": false
+  "averaging_rules": {
+    "scope": "Per-exact-combo trainer targets for top pair, middle pair, and unpaired hands.",
+    "active_boards": [
+      [
+        "As",
+        "Kh",
+        "5h"
+      ],
+      [
+        "As",
+        "Kh",
+        "4h"
+      ],
+      [
+        "As",
+        "Kh",
+        "3h"
+      ],
+      [
+        "As",
+        "Kh",
+        "2h"
+      ]
+    ],
+    "board_weighting": "Equal weight among included boards; range weights establish presence, not board weight.",
+    "eligibility": "Combo must be legal and have positive node reach weight. Made-hand class, flush draw, backdoor flush draw, direct straight-draw type, and backdoor straight status must remain identical.",
+    "subset_selection": "Largest stable-profile board subset, at least two boards. Ties favor the subset appearing first in AK5, AK4, AK3, AK2 order.",
+    "excluded_boards": "Omitted from both numerator and denominator, never treated as zero; exclusion reasons shown per combo.",
+    "rounding": "Compute the mean from original frequencies, then round once to nearest whole percent (half up).",
+    "suit_handling": "Each exact suited or offsuit combo has its own target; blocked and zero-weight combos are omitted.",
+    "frequency_spread": "Maximum minus minimum among included board frequencies, in percentage points. Wide-spread visual highlight starts at 15 pp.",
+    "ev_loss_computed": false
+  },
+  "cross_flop_averages_computed": true,
+  "average_target_implementation": "src/average-trainer.js; calculated at runtime from saved standard-Xeno samples"
 }

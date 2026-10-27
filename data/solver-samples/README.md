@@ -16,8 +16,10 @@ Each sample contains:
 The active AK6–AK2 collection uses **standard Xeno ranges**, as confirmed by the
 user. The solver was initially called “Zeno” in the conversation; directory names
 retain that prefix. `ak-low-two-tone-collection.json` identifies collection members
-and explicitly excludes the original Mobius AK6 reference. No averages have been
-computed; grouping and cross-flop weighting remain undecided.
+and explicitly excludes the original Mobius AK6 reference. The **Averages** trainer
+now calculates per-combo targets from the four complete standard-range boards.
+The manifest records its equal-board weighting and stable-profile subset rules;
+no EV-loss calculation has been performed.
 
 | Board | Range source | Bet-75% frequencies | Range weights | Collection status |
 | --- | --- | --- | --- | --- |
