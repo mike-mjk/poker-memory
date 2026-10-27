@@ -7,6 +7,7 @@ Do not substitute that CO range for a sample's missing node reach weights.
 Each sample contains:
 
 - `raw.txt`: the exact pasted file, without reformatting or averaging.
+- `weights-raw.txt`, when supplied: the exact pasted range-weight export.
 - `sample.json`: reported context, provenance, per-combination frequencies,
   validation results, and explicitly missing information. `schema_version` is 1.
 
@@ -43,9 +44,32 @@ For example, `0.744` means bet 74.4% and check 25.6%. A legal zero means always
 check only if the combination has positive reach weight. Zero entries do not
 establish range membership; do not assign checking weight to absent-range or
 board-blocked combinations. The checking strategy is derivable, not a separately
-supplied export. Per-combination reach weights and action EVs remain missing.
+supplied export. The first sample now includes user-supplied per-combination range
+weights in `reach_weight`. Action EVs remain missing.
 
-Overall betting rate requires node reach weights:
+## Range weights and first-sample aggregate
+
+The weight export contains all 1,326 physical combinations and matches the bet
+export exactly by unordered card pair. All 150 board-blocked combinations have
+zero weight. There are 535 legal positive-weight combinations: 489 have full
+weight and 46 have fractional weight. Their combined range weight is **508.66**.
+Each record already represents a physical combination; do not multiply by 4, 6,
+or 12 again.
+
+Applying the supplied betting strategy gives:
+
+| Action | Weighted combinations | Overall frequency |
+| --- | ---: | ---: |
+| Bet 75% pot | 276.4826975 | 54.355109% |
+| Check | 232.1773025 | 45.644891% |
+| Total | 508.66 | 100% |
+
+These are calculated from the pasted values using decimal arithmetic. Any solver
+display rounding in the original exports remains part of the input precision.
+The raw weight file has its own checksum and provenance in `sample.json`.
+Derived totals are stored in `derived_statistics`.
+
+Overall betting rate is calculated using node reach weights:
 
 ```text
 sum(reach_weight[combo] * bet_frequency[combo]) / sum(reach_weight[combo])
