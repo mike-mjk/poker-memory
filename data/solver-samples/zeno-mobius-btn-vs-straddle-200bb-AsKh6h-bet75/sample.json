@@ -52,7 +52,20 @@
     "pot_before_action_bb": 17.5,
     "actor": "BTN",
     "prior_flop_actions": null,
-    "remaining_stacks_bb": null
+    "remaining_stacks_bb": null,
+    "available_actions": [
+      {
+        "type": "check"
+      },
+      {
+        "type": "bet",
+        "size_fraction_of_pot": 0.75
+      }
+    ],
+    "action_menu_complete": true,
+    "available_bet_sizes_fraction_of_pot": [
+      0.75
+    ]
   },
   "action": {
     "type": "bet",
@@ -65,13 +78,16 @@
     "frequency_scale": "0 to 1; 0.744 means 74.4%",
     "combo_card_order": "Preserved exactly as pasted; each unordered two-card holding occurs once.",
     "blocked_entries": "Retained from the export; flagged and excluded from legal-combo analysis.",
-    "zero_entries": "A zero does not establish that the combo is in the reaching range, or that it folds/checks; other actions and reach weights are missing.",
+    "zero_entries": "A zero for a legal combo that reaches this node means always check. A zero alone does not establish range membership; absent-range and board-blocked combos must not be assigned checking weight.",
     "range_weights_provided": false,
     "other_action_frequencies_provided": false,
     "action_evs_provided": false,
     "aggregate_bet_frequency_computable": false,
     "aggregate_formula": "sum(reach_weight[c] * frequency[c]) / sum(reach_weight[c]), over legal combos at this decision.",
-    "combination_suit_averaging": "None; exact suit-specific frequencies are retained."
+    "combination_suit_averaging": "None; exact suit-specific frequencies are retained.",
+    "check_frequency_derivable": true,
+    "check_frequency_rule": "For a legal combo with positive reach weight at this node: check_frequency = 1 - frequency. The frequency field records betting 75% pot. Do not apply the complement to board-blocked or zero-reach-weight combos.",
+    "action_menu_source": "User clarification: BTN has exactly two options at this decision, check or bet 75% pot; no other betting size is available."
   },
   "validation": {
     "entry_count": 1326,
@@ -88,7 +104,6 @@
   "unconfirmed_context": [
     "Solver URL or solution identifier",
     "Actual Mobius GTO reaching range weights for BTN at this node",
-    "Other available actions and sizes",
     "Action EVs and their units/reference",
     "Flop action history before BTN decision",
     "Remaining stacks at decision",

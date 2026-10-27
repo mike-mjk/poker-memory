@@ -19,6 +19,8 @@ Each sample contains:
 - Rake: 4%, capped at 1.75 BB.
 - Button raises to 6 BB; straddle calls. Reported flop pot: 17.5 BB.
 - Flop: As Kh 6h. Recorded action: BTN bets 75% pot.
+- Complete BTN action menu at this decision: **check or bet 75% pot**.
+  There is exactly one available betting size; the paste records its frequencies.
 - The nominal bet is 13.125 BB; solver rounding is unconfirmed.
 
 The starting stack is not the flop pot or the remaining stack at this node.
@@ -35,10 +37,13 @@ board-blocked combinations, all of which have zero values. The remaining 1,176
 legal combinations include 708 zeros, 445 mixed values, and 23 values of one.
 Retain the blocked entries for provenance and exclude them from analysis.
 
-Legal zeros may represent absent range combinations or combinations that choose
-another action. Do not infer range membership or a complementary checking/folding
-frequency from this one-action export. Per-combination reach weights, other action
-strategies, and action EVs have not been supplied.
+For a legal combination that reaches this decision, the checking frequency is
+`1 - bet_frequency`, because the complete action menu is check or bet 75% pot.
+For example, `0.744` means bet 74.4% and check 25.6%. A legal zero means always
+check only if the combination has positive reach weight. Zero entries do not
+establish range membership; do not assign checking weight to absent-range or
+board-blocked combinations. The checking strategy is derivable, not a separately
+supplied export. Per-combination reach weights and action EVs remain missing.
 
 Overall betting rate requires node reach weights:
 
