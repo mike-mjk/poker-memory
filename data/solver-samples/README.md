@@ -30,7 +30,7 @@ no EV-loss calculation has been performed.
 | As Kh 3h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 2h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 9h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
-| As Kh 8h | Standard Xeno | Saved | Pending | Additional board; frequencies saved, awaiting weights |
+| As Kh 8h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
 
 Additional boards are recorded under `additional_samples` in the manifest. AK9's
 exact suits and other setup are inherited from the standard-Xeno series. Its raw
@@ -89,6 +89,14 @@ has weight 1 on AK4 and 0 on AK5. Totals therefore differ by 2.01 weighted combo
 This establishes agreement on observable shared holdings, not a reconstruction
 of weights for holdings blocked on both boards. The exact 19 differences are
 saved in `comparisons/ak4-vs-ak5-range-weights.json`.
+
+AK8's saved weights match all 1,326 betting-export keys; the 150 board-blocked
+weights are zero, and no zero-weight legal combo has a positive betting frequency.
+Its 508 positive-weight legal combos (469 full-weight and 39 fractional) total
+**487.30** weighted combos. The strategy gives **312.1698929** weighted betting
+combos and **175.1301071** weighted checking combos: **64.061131% bet / 35.938869%
+check**. Both raw exports and their checksums are preserved. Like AK9, AK8 is
+complete but remains outside the current AK5–AK2 trainer target set.
 
 ## First sample
 
