@@ -13,15 +13,33 @@ Each sample contains:
 
 ## Related-board collection status
 
-| Board | Sample folder suffix | Bet-75% frequencies | Range weights | Setup |
-| --- | --- | --- | --- | --- |
-| As Kh 6h | `AsKh6h-bet75` | Saved | Saved | User supplied |
-| As Kh 5h | `AsKh5h-bet75` | Saved | Pending | Other settings provisionally inherited from AK6; confirmation pending |
+The active AK6–AK2 collection uses **standard Xeno ranges**, as confirmed by the
+user. The solver was initially called “Zeno” in the conversation; directory names
+retain that prefix. `ak-low-two-tone-collection.json` identifies collection members
+and explicitly excludes the original Mobius AK6 reference. No averages have been
+computed; grouping and cross-flop weighting remain undecided.
 
-Each suffix follows `zeno-mobius-btn-vs-straddle-200bb-`. No cross-board averaging
-has been applied. Do not reuse AK6's board-filtered weights on AK5. The AK5 upload
-explicitly identifies the board and betting size; its provenance separately marks
-the rest of the carried-over context as provisional.
+| Board | Range source | Bet-75% frequencies | Range weights | Collection status |
+| --- | --- | --- | --- | --- |
+| As Kh 6h | Mobius GTO | Saved | Saved | Separate reference; excluded from standard collection |
+| As Kh 6h | Standard Xeno | Pending | Pending | User will collect again |
+| As Kh 5h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
+| As Kh 4h | Standard Xeno | Pending | Pending | Awaiting exports |
+| As Kh 3h | Standard Xeno | Pending | Pending | Awaiting exports |
+| As Kh 2h | Standard Xeno | Pending | Pending | Awaiting exports |
+
+AK5 is stored at `zeno-standard-btn-vs-straddle-200bb-AsKh5h-bet75`. Its source was
+initially mislabeled by provisional inheritance from AK6; the user explicitly
+corrected it to standard Xeno ranges. The JSON records that correction and former
+sample ID. Its original betting export has not changed. Other game settings carry
+over from the conversation. Do not reuse AK6's board-filtered weights on AK5.
+
+For standard-range AK5, the supplied weights total **497.65** across 523 legal
+positive-weight combos (478 full-weight and 45 fractional). The matched strategy
+gives **263.2461905** weighted betting combinations and **234.4038095** weighted
+checking combinations: **52.897858% bet / 47.102142% check**. All 1,326 weight keys
+match the betting export, all 150 blocked weights are zero, and no zero-weight
+legal combo has a positive betting frequency. Raw inputs and checksums are retained.
 
 ## First sample
 

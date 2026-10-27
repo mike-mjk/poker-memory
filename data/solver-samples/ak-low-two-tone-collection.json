@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "collection_id": "ak-low-two-tone-standard",
+  "solver_name_as_reported": "Xeno",
+  "preflop_range_source": "Standard Xeno ranges",
+  "shared_game_setup_sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh5h-bet75",
+  "action_menu": [
+    {
+      "type": "check"
+    },
+    {
+      "type": "bet",
+      "size_fraction_of_pot": 0.75
+    }
+  ],
+  "samples": [
+    {
+      "board": [
+        "As",
+        "Kh",
+        "6h"
+      ],
+      "sample_id": null,
+      "status": "awaiting_standard_range_exports"
+    },
+    {
+      "board": [
+        "As",
+        "Kh",
+        "5h"
+      ],
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh5h-bet75",
+      "status": "frequencies_and_weights_saved"
+    },
+    {
+      "board": [
+        "As",
+        "Kh",
+        "4h"
+      ],
+      "sample_id": null,
+      "status": "awaiting_standard_range_exports"
+    },
+    {
+      "board": [
+        "As",
+        "Kh",
+        "3h"
+      ],
+      "sample_id": null,
+      "status": "awaiting_standard_range_exports"
+    },
+    {
+      "board": [
+        "As",
+        "Kh",
+        "2h"
+      ],
+      "sample_id": null,
+      "status": "awaiting_standard_range_exports"
+    }
+  ],
+  "excluded_reference_samples": [
+    {
+      "sample_id": "zeno-mobius-btn-vs-straddle-200bb-AsKh6h-bet75",
+      "reason": "Uses Mobius GTO ranges; retain as a separate reference and exclude from standard-range averages."
+    }
+  ],
+  "averaging_rules": null,
+  "cross_flop_averages_computed": false
+}
