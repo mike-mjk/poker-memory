@@ -11,6 +11,18 @@ Each sample contains:
 - `sample.json`: reported context, provenance, per-combination frequencies,
   validation results, and explicitly missing information. `schema_version` is 1.
 
+## Related-board collection status
+
+| Board | Sample folder suffix | Bet-75% frequencies | Range weights | Setup |
+| --- | --- | --- | --- | --- |
+| As Kh 6h | `AsKh6h-bet75` | Saved | Saved | User supplied |
+| As Kh 5h | `AsKh5h-bet75` | Saved | Pending | Other settings provisionally inherited from AK6; confirmation pending |
+
+Each suffix follows `zeno-mobius-btn-vs-straddle-200bb-`. No cross-board averaging
+has been applied. Do not reuse AK6's board-filtered weights on AK5. The AK5 upload
+explicitly identifies the board and betting size; its provenance separately marks
+the rest of the carried-over context as provisional.
+
 ## First sample
 
 `zeno-mobius-btn-vs-straddle-200bb-AsKh6h-bet75`
