@@ -31,7 +31,7 @@ no EV-loss calculation has been performed.
 | As Kh 2h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 9h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
 | As Kh 8h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
-| As Kh 7h | Standard Xeno | Saved | Pending | Additional board; frequencies saved, awaiting weights |
+| As Kh 7h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
 
 Additional boards are recorded under `additional_samples` in the manifest. AK9's
 exact suits and other setup are inherited from the standard-Xeno series. Its raw
@@ -98,6 +98,14 @@ Its 508 positive-weight legal combos (469 full-weight and 39 fractional) total
 combos and **175.1301071** weighted checking combos: **64.061131% bet / 35.938869%
 check**. Both raw exports and their checksums are preserved. Like AK9, AK8 is
 complete but remains outside the current AK5–AK2 trainer target set.
+
+AK7's weights match all 1,326 betting-export keys. All 150 blocked weights are
+zero, and no zero-weight legal combo has a positive bet frequency. Its 520
+positive-weight legal combos (477 full-weight and 43 fractional) total **494.11**
+weighted combos. The strategy gives **277.7774339** weighted betting combos and
+**216.3325661** weighted checking combos: **56.217732% bet / 43.782268% check**.
+Both raw exports and their checksums are preserved. AK7 is complete and queued
+alongside AK8 and AK9 for expansion of the current four-board trainer.
 
 ## First sample
 
