@@ -26,7 +26,7 @@ computed; grouping and cross-flop weighting remain undecided.
 | As Kh 5h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 4h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 3h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
-| As Kh 2h | Standard Xeno | Saved | Pending | Frequencies saved; awaiting weights |
+| As Kh 2h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 
 AK5 is stored at `zeno-standard-btn-vs-straddle-200bb-AsKh5h-bet75`. Its source was
 initially mislabeled by provisional inheritance from AK6; the user explicitly
@@ -51,6 +51,13 @@ For standard-range AK3, weights total **501.66** across 528 positive-weight lega
 combos (482 full-weight and 46 fractional). The strategy gives **265.2659295**
 weighted betting combinations and **236.3940705** weighted checking combinations:
 **52.877632% bet / 47.122368% check**. All 1,326 keys match the betting export;
+blocked weights are zero, and no zero-weight legal holding has a positive bet value.
+Both raw inputs are preserved with checksums in the sample metadata.
+
+For standard-range AK2, weights total **502.20** across 528 positive-weight legal
+combos (484 full-weight and 44 fractional). The strategy gives **249.4635587**
+weighted betting combinations and **252.7364413** weighted checking combinations:
+**49.674145% bet / 50.325855% check**. All 1,326 keys match the betting export;
 blocked weights are zero, and no zero-weight legal holding has a positive bet value.
 Both raw inputs are preserved with checksums in the sample metadata.
 
