@@ -29,12 +29,21 @@ no EV-loss calculation has been performed.
 | As Kh 4h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 3h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 2h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
-| As Kh 9h | Standard Xeno | Saved | Pending | Additional board; awaiting weights before trainer expansion |
+| As Kh 9h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
 
 Additional boards are recorded under `additional_samples` in the manifest. AK9's
 exact suits and other setup are inherited from the standard-Xeno series. Its raw
 betting export is preserved in `zeno-standard-btn-vs-straddle-200bb-AsKh9h-bet75`;
 it is not included in the current four-board trainer targets.
+
+AK9's range weights are now saved and matched to all 1,326 betting-export keys.
+The 150 board-blocked weights are zero; no legal zero-weight combo has a positive
+betting frequency. Its 509 positive-weight legal combos (463 full-weight and 46
+fractional) total **482.66** weighted combos. The strategy produces
+**330.6921701** weighted betting combos and **151.9678299** weighted checking
+combos: **68.514517% bet / 31.485483% check**. Both raw inputs are preserved with
+checksums. This completed sample remains separate from the current AK5–AK2
+trainer target set until that board set is expanded explicitly.
 
 AK5 is stored at `zeno-standard-btn-vs-straddle-200bb-AsKh5h-bet75`. Its source was
 initially mislabeled by provisional inheritance from AK6; the user explicitly
