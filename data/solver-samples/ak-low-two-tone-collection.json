@@ -121,6 +121,16 @@
       "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh8h-bet75",
       "status": "frequencies_and_weights_saved",
       "included_in_current_trainer": false
+    },
+    {
+      "board": [
+        "As",
+        "Kh",
+        "7h"
+      ],
+      "sample_id": "zeno-standard-btn-vs-straddle-200bb-AsKh7h-bet75",
+      "status": "frequencies_saved_weights_pending",
+      "included_in_current_trainer": false
     }
   ]
 }

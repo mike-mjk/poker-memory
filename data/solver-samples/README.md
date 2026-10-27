@@ -31,6 +31,7 @@ no EV-loss calculation has been performed.
 | As Kh 2h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 9h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
 | As Kh 8h | Standard Xeno | Saved | Saved | Complete additional board, ready for trainer expansion |
+| As Kh 7h | Standard Xeno | Saved | Pending | Additional board; frequencies saved, awaiting weights |
 
 Additional boards are recorded under `additional_samples` in the manifest. AK9's
 exact suits and other setup are inherited from the standard-Xeno series. Its raw
