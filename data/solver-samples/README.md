@@ -24,7 +24,7 @@ computed; grouping and cross-flop weighting remain undecided.
 | As Kh 6h | Mobius GTO | Saved | Saved | Separate reference; excluded from standard collection |
 | As Kh 6h | Standard Xeno | Pending | Pending | User will collect again |
 | As Kh 5h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
-| As Kh 4h | Standard Xeno | Saved | Pending | Frequencies saved; awaiting weights |
+| As Kh 4h | Standard Xeno | Saved | Saved | Ready for later grouped analysis |
 | As Kh 3h | Standard Xeno | Pending | Pending | Awaiting exports |
 | As Kh 2h | Standard Xeno | Pending | Pending | Awaiting exports |
 
@@ -40,6 +40,23 @@ gives **263.2461905** weighted betting combinations and **234.4038095** weighted
 checking combinations: **52.897858% bet / 47.102142% check**. All 1,326 weight keys
 match the betting export, all 150 blocked weights are zero, and no zero-weight
 legal combo has a positive betting frequency. Raw inputs and checksums are retained.
+
+For standard-range AK4, weights total **499.66** across 526 positive-weight legal
+combos (480 full-weight and 46 fractional). The strategy yields **247.1915444**
+weighted betting combinations and **252.4684556** weighted checking combinations:
+**49.471950% bet / 50.528050% check**. All weight keys match the betting export;
+blocked weights are zero, and no zero-weight legal holding has a positive bet value.
+
+### AK4 versus AK5 range weights
+
+The full lists are not identical: 1,307 of 1,326 weights match, and 19 differ.
+However, **all 1,128 combinations legal on both boards have identical weights**.
+Every difference involves 4h or 5h and is consistent with changing the blocked
+heart from 5h to 4h. For example, 4c4h has weight 0 on AK4 and 1 on AK5; 5c5h
+has weight 1 on AK4 and 0 on AK5. Totals therefore differ by 2.01 weighted combos.
+This establishes agreement on observable shared holdings, not a reconstruction
+of weights for holdings blocked on both boards. The exact 19 differences are
+saved in `comparisons/ak4-vs-ak5-range-weights.json`.
 
 ## First sample
 

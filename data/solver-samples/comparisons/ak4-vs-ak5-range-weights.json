@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "comparison_type": "exact_physical_combo_range_weights",
+  "samples": {
+    "ak4": "zeno-standard-btn-vs-straddle-200bb-AsKh4h-bet75",
+    "ak5": "zeno-standard-btn-vs-straddle-200bb-AsKh5h-bet75"
+  },
+  "total_compared_combinations": 1326,
+  "identical_weight_combinations": 1307,
+  "different_weight_combinations": 19,
+  "legal_on_both_boards": 1128,
+  "different_weights_among_combos_legal_on_both_boards": 0,
+  "all_differences_involve_cards": [
+    "4h",
+    "5h"
+  ],
+  "interpretation": "The exports are not identical as full lists. Every combo legal on both boards has identical supplied weight. All observed differences are consistent with the changed board blocker; this does not reconstruct weights for holdings blocked on both boards.",
+  "range_weight_totals": {
+    "ak4": 499.66,
+    "ak5": 497.65
+  },
+  "differences": [
+    {
+      "cards": [
+        "4c",
+        "4h"
+      ],
+      "ak4_weight": 0.0,
+      "ak5_weight": 1.0,
+      "blocked_on_ak4": true,
+      "blocked_on_ak5": false
+    },
+    {
+      "cards": [
+        "4d",
+        "4h"
+      ],
+      "ak4_weight": 0.0,
+      "ak5_weight": 1.0,
+      "blocked_on_ak4": true,
+      "blocked_on_ak5": false
+    },
+    {
+      "cards": [
+        "4h",
+        "4s"
+      ],
+      "ak4_weight": 0.0,
+      "ak5_weight": 1.0,
+      "blocked_on_ak4": true,
+      "blocked_on_ak5": false
+    },
+    {
+      "cards": [
+        "5c",
+        "5h"
+      ],
+      "ak4_weight": 1.0,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    },
+    {
+      "cards": [
+        "5d",
+        "5h"
+      ],
+      "ak4_weight": 1.0,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    },
+    {
+      "cards": [
+        "5h",
+        "5s"
+      ],
+      "ak4_weight": 1.0,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    },
+    {
+      "cards": [
+        "5h",
+        "7h"
+      ],
+      "ak4_weight": 1.0,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    },
+    {
+      "cards": [
+        "5h",
+        "8h"
+      ],
+      "ak4_weight": 0.01,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    },
+    {
+      "cards": [
+        "5h",
+        "Th"
+      ],
+      "ak4_weight": 1.0,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    },
+    {
+      "cards": [
+        "4h",
+        "Jh"
+      ],
+      "ak4_weight": 0.0,
+      "ak5_weight": 1.0,
+      "blocked_on_ak4": true,
+      "blocked_on_ak5": false
+    },
+    {
+      "cards": [
+        "5h",
+        "Jh"
+      ],
+      "ak4_weight": 1.0,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    },
+    {
+      "cards": [
+        "4h",
+        "Qh"
+      ],
+      "ak4_weight": 0.0,
+      "ak5_weight": 1.0,
+      "blocked_on_ak4": true,
+      "blocked_on_ak5": false
+    },
+    {
+      "cards": [
+        "5h",
+        "Qh"
+      ],
+      "ak4_weight": 1.0,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    },
+    {
+      "cards": [
+        "4h",
+        "Ac"
+      ],
+      "ak4_weight": 0.0,
+      "ak5_weight": 1.0,
+      "blocked_on_ak4": true,
+      "blocked_on_ak5": false
+    },
+    {
+      "cards": [
+        "5h",
+        "Ac"
+      ],
+      "ak4_weight": 1.0,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    },
+    {
+      "cards": [
+        "4h",
+        "Ad"
+      ],
+      "ak4_weight": 0.0,
+      "ak5_weight": 1.0,
+      "blocked_on_ak4": true,
+      "blocked_on_ak5": false
+    },
+    {
+      "cards": [
+        "5h",
+        "Ad"
+      ],
+      "ak4_weight": 1.0,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    },
+    {
+      "cards": [
+        "4h",
+        "Ah"
+      ],
+      "ak4_weight": 0.0,
+      "ak5_weight": 1.0,
+      "blocked_on_ak4": true,
+      "blocked_on_ak5": false
+    },
+    {
+      "cards": [
+        "5h",
+        "Ah"
+      ],
+      "ak4_weight": 1.0,
+      "ak5_weight": 0.0,
+      "blocked_on_ak4": false,
+      "blocked_on_ak5": true
+    }
+  ]
+}
