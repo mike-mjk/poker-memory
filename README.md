@@ -317,3 +317,8 @@ Pio, rather than representing 200 BB with only 200 chips. Convert chip amounts
 and chip-denominated EVs to BB by dividing by 100 (1,131 chips = 11.31 BB).
 Percentages are unchanged. A future strategy viewer should perform this display
 conversion automatically. The Plan tab records these settings and the rationale.
+
+Additional Pio tree-builder settings (user-provided):
+
+- All-in threshold: 67% of the initial effective stack.
+- Add all-in only if less than 1,000% of the pot.
