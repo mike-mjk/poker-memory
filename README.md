@@ -309,7 +309,8 @@ For this study, use **100 solver chips per BB** consistently:
 - Starting stacks before the hand: 20,000 chips = 200 BB.
 - Flop tree root pot: 1,750 chips = 17.5 BB.
 - Remaining effective stack at the flop tree root: 19,350 chips = 193.5 BB.
-- Rake: 5%, capped at 400 chips = 4 BB.
+- In the Pio tree setup, enter rake as 5% of the pot with a cap of 400 chips
+  (= 4 BB).
 
 The user chose this scale to support finer amounts and sub-BB EV reporting in
 Pio, rather than representing 200 BB with only 200 chips. Convert chip amounts
