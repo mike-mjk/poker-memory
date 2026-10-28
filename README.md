@@ -286,3 +286,20 @@ range and the straddle call versus button RFI range selected for this study.
 Exact filenames are not yet recorded. The NL400 rake label describes the range
 source; the planned postflop solves use WPT Gold NL100 rake: 5% capped at
 4 big blinds (user-provided).
+
+The simplified Pio tree is transcribed in the Plan tab from the user's screenshot:
+
+| Street | Position | Bet % | Donk % | Raise % | Add allin |
+| --- | --- | --- | --- | --- | --- |
+| Flop | IP / button | 75 | — | 50 | Unchecked |
+| Flop | OOP / straddle | Blank / no donk | — | 50 | Not shown |
+| Turn | IP / button | 50 | — | 50 | Checked |
+| Turn | OOP / straddle | 50 | 50 | 50 | Checked |
+| River | IP / button | 75 | — | 75 | Checked |
+| River | OOP / straddle | 75 | 25 | 75 | Checked |
+
+All IP “Don't 3-bet” boxes are unchecked. Size values reproduce the Pio builder's
+percentage entries. Although the verbal description said to check “Add all in,”
+the screenshot shows flop IP unchecked and turn/river checked; the recorded
+settings follow the screenshot and make that distinction explicit. Other builder
+settings are not inferred. Changing or expanding turn sizes is parked for later.
