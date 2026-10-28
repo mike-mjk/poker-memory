@@ -284,4 +284,5 @@ The Plan tab also records the local starting-range folder:
 `C:\PioSOLVER\Ranges\Mobius WPT Gold NL400 rake`. It contains the button RFI
 range and the straddle call versus button RFI range selected for this study.
 Exact filenames are not yet recorded. The NL400 rake label describes the range
-source; the planned postflop solve rake remains NL100, with exact settings to confirm.
+source; the planned postflop solves use WPT Gold NL100 rake: 5% capped at
+4 big blinds (user-provided).
