@@ -165,7 +165,7 @@ export function initLearning({ onCategory, onTrain }) {
       browser.hidden = !exploring;
       details.hidden = !exploring;
       trainer.hidden = mode !== 'train';
-      document.querySelector('#matrix-workspace').hidden = ['train','flops','flashcards','averages'].includes(mode);
+      document.querySelector('#matrix-workspace').hidden = ['train','flops','flashcards','averages','plan'].includes(mode);
       document.querySelector('#matrix-workspace').classList.toggle('with-categories', exploring);
       if (mode === 'train' && !question) startQuestion();
     },

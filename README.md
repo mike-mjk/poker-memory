@@ -271,3 +271,11 @@ key differs from the original four-board dataset; the old stored totals are not
 overwritten. Variation-chart positions scale to the number of boards so all seven
 points and labels fit. The historical `ak-low-two-tone-collection.json` filename
 and collection ID are retained; its explicit active-board list is authoritative.
+
+### Research plan
+
+The **Plan** tab keeps the Mobius/PioSolver study checklist, settled decisions,
+and ideas parked for later in one place. The initial plan ships with the app;
+checkmarks and added tasks persist in this browser's local storage only and do
+not sync through GitHub or between computers. This planning section does not
+change the existing Xeno datasets or start any solves.

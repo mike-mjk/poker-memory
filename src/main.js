@@ -5,6 +5,7 @@ import { initLearning } from './learning.js';
 import { initFlops } from './flop-ui.js';
 import { initFlashcards } from './flashcard-ui.js';
 import { initAverages } from './average-ui.js';
+import { initPlan } from './plan-ui.js';
 
 const storageKey = 'poker-memory:club-wpt-gold:8max:co-rfi:v1';
 let answers = {};
@@ -25,11 +26,12 @@ let learning;
 let flops;
 let flashcards;
 let averages;
+let plan;
 const app = document.querySelector('#app');
 app.innerHTML = `
 <header>
   <div class="title"><h1>RFI <span>CO</span></h1><span class="context">Club WPT Gold · 8-max</span></div>
-  <nav aria-label="Matrix mode"><button data-mode="strategy" class="active" aria-pressed="true">Strategy</button><button data-mode="fill" aria-pressed="false">Fill in</button><button data-mode="categories" aria-pressed="false">Categories</button><button data-mode="train" aria-pressed="false">Trainer</button><button data-mode="flops" aria-pressed="false">Flops</button><button data-mode="averages" aria-pressed="false">Averages</button><button data-mode="flashcards" aria-pressed="false">Flashcards</button></nav>
+  <nav aria-label="Matrix mode"><button data-mode="strategy" class="active" aria-pressed="true">Strategy</button><button data-mode="fill" aria-pressed="false">Fill in</button><button data-mode="categories" aria-pressed="false">Categories</button><button data-mode="train" aria-pressed="false">Trainer</button><button data-mode="flops" aria-pressed="false">Flops</button><button data-mode="averages" aria-pressed="false">Averages</button><button data-mode="flashcards" aria-pressed="false">Flashcards</button><button data-mode="plan" aria-pressed="false">Plan</button></nav>
 </header>
 <section class="tools" aria-label="Matrix controls">
   <div id="study-tools"><span class="key"><i class="raise"></i> Raise</span><span class="key"><i class="fold"></i> Fold</span><span class="key"><i class="mixed"></i> Mixed</span><span class="opening">${openingPercent.toFixed(1)}% opening range</span></div>
@@ -42,6 +44,7 @@ app.innerHTML = `
 <section id="flop-panel" hidden></section>
 <section id="flashcards-panel" hidden></section>
 <section id="averages-panel" hidden></section>
+<section id="plan-panel" hidden></section>
 <main id="matrix-workspace"><aside id="category-browser" hidden></aside><section class="matrix-content"><section id="category-details" hidden></section><div class="range-grid" role="group" aria-label="Cutoff raise first in hand matrix"></div></section></main>
 <footer><span id="status" role="status" aria-live="polite">Select a hand to see its frequencies.</span><span id="mode-note">Suited above diagonal · Offsuit below</span></footer>`;
 const grid = document.querySelector('.range-grid');
@@ -134,9 +137,10 @@ for (const button of document.querySelectorAll('[data-mode]')) button.addEventLi
   flops?.setMode(mode);
   flashcards?.setMode(mode);
   averages?.setMode(mode);
-  document.title = mode === 'averages' ? 'Poker Memory · Average frequencies' : mode === 'flashcards' ? 'Poker Memory · Flashcards' : 'Poker Memory · CO Raise First In';
-  document.querySelector('.title h1').innerHTML = ['flashcards','averages'].includes(mode) ? 'Poker Memory' : 'RFI <span>CO</span>';
-  document.querySelector('.context').textContent = mode === 'averages' ? 'Xeno · BTN vs straddle' : mode === 'flashcards' ? 'Personal flashcards' : 'Club WPT Gold · 8-max';
+  plan?.setMode(mode);
+  document.title = mode === 'plan' ? 'Poker Memory · Plan' : mode === 'averages' ? 'Poker Memory · Average frequencies' : mode === 'flashcards' ? 'Poker Memory · Flashcards' : 'Poker Memory · CO Raise First In';
+  document.querySelector('.title h1').innerHTML = ['flashcards','averages','plan'].includes(mode) ? 'Poker Memory' : 'RFI <span>CO</span>';
+  document.querySelector('.context').textContent = mode === 'plan' ? 'Research & practice plan' : mode === 'averages' ? 'Xeno · BTN vs straddle' : mode === 'flashcards' ? 'Personal flashcards' : 'Club WPT Gold · 8-max';
   if (mode === 'fill') progress();
   else document.querySelector('#status').textContent = mode === 'train' ? 'Choose a practice type and category to train.' : mode === 'categories' ? 'Category percentages include mixed raise frequencies.' : 'Select a hand to see its frequencies.';
   if (mode === 'train' || mode === 'categories') document.querySelector('#mode-note').textContent = 'Preflop · No board-card removal';
@@ -151,6 +155,10 @@ for (const button of document.querySelectorAll('[data-mode]')) button.addEventLi
   if (mode === 'averages') {
     document.querySelector('#status').textContent = 'Equal-board averages · Whole-percent targets';
     document.querySelector('#mode-note').textContent = 'Standard Xeno · AK9–AK2 except AK6 · Bet 75%';
+  }
+  if (mode === 'plan') {
+    document.querySelector('#status').textContent = 'Mobius ranges · Local PioSolver · Broad, learnable strategies';
+    document.querySelector('#mode-note').textContent = 'Checkmarks saved in this browser';
   }
   renderCells();
 });
@@ -195,3 +203,6 @@ flashcards.setMode(mode);
 
 averages = initAverages();
 averages.setMode(mode);
+
+plan = initPlan();
+plan.setMode(mode);
