@@ -322,3 +322,10 @@ Additional Pio tree-builder settings (user-provided):
 
 - All-in threshold: 67% of the initial effective stack.
 - Add all-in only if less than 1,000% of the pot.
+
+User-observed discrepancy to revisit before memorizing a strategy: AA (top set)
+on AKx bets close to 100% in the simplified sizing tree, while the more complex
+Mobius tree checks it frequently. The Plan tab records this observation and an
+investigation checkpoint before creating training material. Exact board examples,
+frequencies, a cause, and a fix have not yet been established; investigation is
+deferred so it does not derail current planning.
