@@ -303,3 +303,16 @@ percentage entries. Although the verbal description said to check “Add all in,
 the screenshot shows flop IP unchecked and turn/river checked; the recorded
 settings follow the screenshot and make that distinction explicit. Other builder
 settings are not inferred. Changing or expanding turn sizes is parked for later.
+
+For this study, use **100 solver chips per BB** consistently:
+
+- Starting stacks before the hand: 20,000 chips = 200 BB.
+- Flop tree root pot: 1,750 chips = 17.5 BB.
+- Remaining effective stack at the flop tree root: 19,350 chips = 193.5 BB.
+- Rake: 5%, capped at 400 chips = 4 BB.
+
+The user chose this scale to support finer amounts and sub-BB EV reporting in
+Pio, rather than representing 200 BB with only 200 chips. Convert chip amounts
+and chip-denominated EVs to BB by dividing by 100 (1,131 chips = 11.31 BB).
+Percentages are unchanged. A future strategy viewer should perform this display
+conversion automatically. The Plan tab records these settings and the rationale.
