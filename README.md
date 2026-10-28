@@ -329,3 +329,8 @@ Mobius tree checks it frequently. The Plan tab records this observation and an
 investigation checkpoint before creating training material. Exact board examples,
 frequencies, a cause, and a fix have not yet been established; investigation is
 deferred so it does not derail current planning.
+
+The first local Mobius pilot uses **As Kh 2h**, PiO-CFR, and a target
+exploitability of **0.2% of the pot** (3.5 solver chips). Its reproducible build
+script, settings, validation and local solution are documented in
+[`data/pio-pilot/README.md`](data/pio-pilot/README.md).

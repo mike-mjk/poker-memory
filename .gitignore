@@ -1,3 +1,32 @@
+# Node dependencies and generated website
 node_modules/
 dist/
+
+# PioSolver saves and backup saves (keep build scripts and result exports)
+*.cfr
+*.cfr.bak
+*.cfr.tmp
+
+# Generated pilot output, including ranges, exports, reports and build commands
+/data/pio-pilot/*/
+
+# Runtime logs and temporary files
+*.log
+*.tmp
+
+# Local Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local credentials (allow a checked-in example)
+.env
+.env.*
+!.env.example
+
+# Operating system metadata
 .DS_Store
+Thumbs.db
+Desktop.ini
